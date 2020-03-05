@@ -104,7 +104,8 @@ public class MainWindow extends JFrame {
 
 		JPanel panel_1 = new JPanel();
 		contentPane.add(panel_1, BorderLayout.NORTH);
-		panel_1.setLayout(new MigLayout("fill", "[][][22.00][53.00][64.00px:n][43.00][][40px:n][][][][grow]", "[][][][][][][][][][][][][][][][][][][][]"));
+		panel_1.setLayout(new MigLayout("fill", "[][][22.00][53.00][64.00px:n][43.00][][40px:n][][][][grow]",
+				"[][][][][][][][][][][][][][][][][][][][]"));
 
 		JLabel lblNewLabel = new JLabel("API key:");
 		panel_1.add(lblNewLabel, "cell 1 1 2 1,growx");
@@ -230,13 +231,13 @@ public class MainWindow extends JFrame {
 				btn_multireq.setText((int) (spinner_multireq.getValue()) + " requests in a row");
 			}
 		});
-		
+
 		lblUpdated = new JLabel("last update");
 		panel_1.add(lblUpdated, "cell 4 11");
-		
+
 		lblLabel_lastUpdate = new JLabel("0");
 		panel_1.add(lblLabel_lastUpdate, "cell 5 11,alignx right");
-		
+
 		lblSecsAgo = new JLabel("secs ago");
 		panel_1.add(lblSecsAgo, "cell 6 11 2 1");
 
@@ -319,7 +320,7 @@ public class MainWindow extends JFrame {
 
 		comboBox_profile.setEnabled(lock);
 		btnLoadProfiles.setEnabled(lock);
-		
+
 		btnSendRequest.setEnabled(lock);
 		btnSetStart.setEnabled(lock);
 
