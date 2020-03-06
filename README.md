@@ -6,6 +6,7 @@ This is few-hours-project to create something that can tell how many zealots you
 It takes some time to update, but that is a small price to pay for avoiding the risk of using mods.
 
 screenshots:
+
 ![screenshot1](screenshots/screenshot1.JPG)
 ![screenshot2](screenshots/screenshot2.JPG)
 
