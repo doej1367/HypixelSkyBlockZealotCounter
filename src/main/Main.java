@@ -9,9 +9,6 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Map.Entry;
-import java.util.Set;
-
 import javax.net.ssl.HttpsURLConnection;
 import org.json.*;
 
@@ -217,12 +214,11 @@ public class Main {
 	public static void setStart() {
 		if (currentProfile == null)
 			return;
-		Set<Entry<Long, Long>> set = currentProfile.getZealotKillCounts().entrySet();
-		if (set.size() > 0) {
-			@SuppressWarnings("unchecked")
-			Entry<Long, Long> lastValue = (Entry<Long, Long>) set.toArray()[set.size() - 1];
-			kills_start = (long) lastValue.getValue();
-			last_updated = (long) lastValue.getKey();
+		ArrayList<ZealotCount> list = currentProfile.getZealotKillCounts();
+		if (list.size() > 0) {
+			ZealotCount lastValue = list.get(0);
+			kills_start = (long) lastValue.getZealotKillCount();
+			last_updated = (long) lastValue.getTimestamp();
 		}
 
 	}

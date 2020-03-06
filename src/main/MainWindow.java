@@ -208,7 +208,7 @@ public class MainWindow extends JFrame {
 
 		spinner_multireq = new JSpinner();
 		spinner_multireq.setEnabled(false);
-		spinner_multireq.setModel(new SpinnerNumberModel(new Integer(30), new Integer(1), null, new Integer(1)));
+		spinner_multireq.setModel(new SpinnerNumberModel(new Integer(480), new Integer(1), null, new Integer(1)));
 		spinner_multireq.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				btn_multireq.setText((int) (spinner_multireq.getValue()) + " requests in a row");
@@ -256,7 +256,7 @@ public class MainWindow extends JFrame {
 		lblMinsBreak = new JLabel("mins break");
 		panel_1.add(lblMinsBreak, "cell 8 18");
 
-		btn_multireq = new JButton("30 requests in a row");
+		btn_multireq = new JButton("480 requests in a row");
 		btn_multireq.setEnabled(false);
 		panel_1.add(btn_multireq, "cell 11 18,growx");
 

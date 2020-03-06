@@ -1,11 +1,11 @@
 package main;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 
 public class Profile {
 	private String uuid;
 	private String cute_name;
-	private HashMap<Long, Long> zealotKillCounts = new HashMap<>();
+	private ArrayList<ZealotCount> zealotKillCounts = new ArrayList<>();
 
 	public Profile(String uuid, String cute_name) {
 		this.uuid = uuid;
@@ -28,12 +28,12 @@ public class Profile {
 		this.cute_name = cute_name;
 	}
 
-	public HashMap<Long, Long> getZealotKillCounts() {
+	public ArrayList<ZealotCount> getZealotKillCounts() {
 		return zealotKillCounts;
 	}
 
 	public void addZealotKillCount(Long timestamp, Long zealotKillCount) {
-		zealotKillCounts.put(timestamp, zealotKillCount);
+		zealotKillCounts.add(0, new ZealotCount(timestamp, zealotKillCount));
 	}
 
 	@Override
