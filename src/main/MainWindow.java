@@ -248,7 +248,7 @@ public class MainWindow extends JFrame {
 		lblKills = new JLabel("Kills");
 		panel_1.add(lblKills, "cell 9 11");
 
-		btnSetStart = new JButton("set start");
+		btnSetStart = new JButton("reset counter");
 		btnSetStart.setEnabled(false);
 		btnSetStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
