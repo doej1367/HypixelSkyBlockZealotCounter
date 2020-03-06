@@ -8,5 +8,6 @@ It takes some time to update, but that is a small price to pay for avoiding the 
 screenshots:
 
 ![screenshot1](screenshots/screenshot1.JPG)
+
 ![screenshot2](screenshots/screenshot2.JPG)
 
