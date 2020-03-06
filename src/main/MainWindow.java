@@ -188,7 +188,7 @@ public class MainWindow extends JFrame {
 						Main.loadProfiles();
 						super.run();
 						enableButtons(true);
-						btnSetStart.setEnabled(false);
+						//btnSetStart.setEnabled(false);
 						spinner_multireq.setEnabled(false);
 						spinner_multireq_wait.setEnabled(false);
 						btn_multireq.setEnabled(false);
@@ -214,9 +214,6 @@ public class MainWindow extends JFrame {
 						Main.sendRequest();
 						super.run();
 						enableButtons(true);
-						spinner_multireq.setEnabled(false);
-						spinner_multireq_wait.setEnabled(false);
-						btn_multireq.setEnabled(false);
 					}
 				};
 				t.start();
@@ -249,13 +246,10 @@ public class MainWindow extends JFrame {
 		panel_1.add(lblKills, "cell 9 11");
 
 		btnSetStart = new JButton("reset counter");
-		btnSetStart.setEnabled(false);
 		btnSetStart.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				enableButtons(false);
 				Main.setStart();
 				lblNewLabel_killCount.setText("0");
-				enableButtons(true);
 			}
 		});
 		panel_1.add(btnSetStart, "cell 11 11,growx");
@@ -322,7 +316,7 @@ public class MainWindow extends JFrame {
 		btnLoadProfiles.setEnabled(lock);
 
 		btnSendRequest.setEnabled(lock);
-		btnSetStart.setEnabled(lock);
+		//btnSetStart.setEnabled(lock);
 
 		spinner_multireq.setEnabled(lock);
 		spinner_multireq_wait.setEnabled(lock);

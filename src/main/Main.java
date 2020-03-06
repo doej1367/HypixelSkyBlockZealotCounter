@@ -209,6 +209,8 @@ public class Main {
 	}
 
 	public static void setStart() {
+		if (currentProfile == null)
+			return;
 		Set<Entry<Long, Long>> set = currentProfile.getZealotKillCounts().entrySet();
 		if (set.size() > 0) {
 			@SuppressWarnings("unchecked")
