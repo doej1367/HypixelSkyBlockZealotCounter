@@ -23,7 +23,7 @@ public class Main {
 	public static ArrayList<Player> players;
 	public static MainWindow mw;
 	private static Profile currentProfile;
-	private static Long kills_start = 0L;
+	public static Long kills_start = 0L; // TODO save and restore
 	private static Long last_updated = 0L;
 	private static Thread t1 = new Thread() {
 		@Override
@@ -46,6 +46,12 @@ public class Main {
 			BufferedReader br = new BufferedReader(new FileReader(config));
 			api_key = "" + br.readLine();
 			ign = br.readLine();
+			try {
+				kills_start = Long.parseLong(br.readLine());
+			} catch (NumberFormatException e) {
+				kills_start = 0L;
+				e.printStackTrace();
+			}
 			br.close();
 		} catch (IOException e1) {
 			e1.printStackTrace();
@@ -128,7 +134,7 @@ public class Main {
 		loadZealotKillCount();
 		if (!t1.isAlive())
 			t1.start();
-
+		mw.saveToFile();
 		consoleOut(" [ OK ]\n");
 		updateConsoleOut();
 	}

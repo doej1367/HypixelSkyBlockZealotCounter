@@ -121,14 +121,7 @@ public class MainWindow extends JFrame {
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				try {
-					File config = new File("config.txt");
-					BufferedWriter bw = new BufferedWriter(new FileWriter(config));
-					bw.write(textField_API.getText() + "\n" + textField_IGN.getText() + "\n");
-					bw.close();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
+				saveToFile();
 			}
 
 			@Override
@@ -151,14 +144,7 @@ public class MainWindow extends JFrame {
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				try {
-					File config = new File("config.txt");
-					BufferedWriter bw = new BufferedWriter(new FileWriter(config));
-					bw.write(textField_API.getText() + "\n" + textField_IGN.getText() + "\n");
-					bw.close();
-				} catch (IOException e1) {
-					e1.printStackTrace();
-				}
+				saveToFile();
 			}
 
 			@Override
@@ -188,7 +174,7 @@ public class MainWindow extends JFrame {
 						Main.loadProfiles();
 						super.run();
 						enableButtons(true);
-						//btnSetStart.setEnabled(false);
+						// btnSetStart.setEnabled(false);
 						spinner_multireq.setEnabled(false);
 						spinner_multireq_wait.setEnabled(false);
 						btn_multireq.setEnabled(false);
@@ -250,6 +236,7 @@ public class MainWindow extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Main.setStart();
 				lblNewLabel_killCount.setText("0");
+				saveToFile();
 			}
 		});
 		panel_1.add(btnSetStart, "cell 11 11,growx");
@@ -301,6 +288,17 @@ public class MainWindow extends JFrame {
 		});
 	}
 
+	public void saveToFile() {
+		try {
+			File config = new File("config.txt");
+			BufferedWriter bw = new BufferedWriter(new FileWriter(config));
+			bw.write(textField_API.getText() + "\n" + textField_IGN.getText() + "\n" + (long) Main.kills_start + "\n");
+			bw.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	public JLabel getLblLabel_lastUpdate() {
 		return lblLabel_lastUpdate;
 	}
@@ -316,7 +314,7 @@ public class MainWindow extends JFrame {
 		btnLoadProfiles.setEnabled(lock);
 
 		btnSendRequest.setEnabled(lock);
-		//btnSetStart.setEnabled(lock);
+		// btnSetStart.setEnabled(lock);
 
 		spinner_multireq.setEnabled(lock);
 		spinner_multireq_wait.setEnabled(lock);
